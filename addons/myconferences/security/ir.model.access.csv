@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_directori_odoo/odoo/addons/myconferences_directori_odoo/odoo/addons/myconferences,directori_odoo/odoo/addons/myconferences.directori_odoo/odoo/addons/myconferences,model_directori_odoo/odoo/addons/myconferences_directori_odoo/odoo/addons/myconferences,,1,0,0,0

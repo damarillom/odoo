@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem name="hospitalDAM" id="hospital_menu"/>
+
+    <record model="ir.actions.act_window" id="action_hospital_pacient">
+        <field name="name">Pacient</field>
+        <field name="res_model">hospital_dam.pacient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Pacient" id="hospital_menu" parent="hospital_menu"
+              sequence="1" action="hospital_pacient"/>
+
+
+</odoo>

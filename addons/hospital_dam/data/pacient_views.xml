@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="hospital_pacient_form">
+        <field name="name">Order Form View</field>
+        <field name="model">hospital_dam.pacient</field>
+        <field name="arch" type="xml">
+            <form string="Plant Order">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group col="4">
+                        <group colspan="2">
+                            <field name="pacient_id" />
+                        </group>
+                        <group colspan="2">
+                            <field name="last_modification" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

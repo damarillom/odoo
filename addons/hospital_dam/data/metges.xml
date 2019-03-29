@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="metge0" model="h2.metge">
+			<field name="nom">Pepe</field>
+			<field name="cognom">Doctor</field>
+			<field name="genere">m</field>
+			<field name="dni">98765432S</field>
+			<field name="adreça">calle falsa 123</field>
+			<field name="anys">68</field>
+			<field name="especialitat_id" ref="especialitat0"></field>
+		</record>
+		<record id="metge1" model="h2.metge">
+			<field name="nom">Manula</field>
+			<field name="cognom">Doctora</field>
+			<field name="genere">f</field>
+			<field name="dni">98745632S</field>
+			<field name="adreça">calle verdadera 123</field>
+			<field name="anys">33</field>
+			<field name="especialitat_id" ref="especialitat0"></field>
+		</record>
+		<record id="metge2" model="h2.metge">
+			<field name="nom">Pediatra</field>
+			<field name="cognom">Ruiz</field>
+			<field name="genere">m</field>
+			<field name="dni">98765433L</field>
+			<field name="adreça">calle falsa 124</field>
+			<field name="anys">24</field>
+			<field name="especialitat_id" ref="especialitat1"></field>
+		</record>
+	</data>
+</odoo>

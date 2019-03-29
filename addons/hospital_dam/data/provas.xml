@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="prova0" model="h2.prova">
+			<field name="nom">Prueba1</field>
+			<field name="codi">Radio</field>
+			<field name="data"></field>
+			<field name="resultats">Esta bien</field>
+			<!--<field name="pacient_id" value="10"></field>-->
+		</record>
+		<record id="prova1" model="h2.prova">
+			<field name="nom">Prueba2</field>
+			<field name="codi">Extr</field>
+			<field name="data"></field>
+			<!--<field name="pacient_id">11</field>-->
+		</record>
+		<record id="prova2" model="h2.prova">
+			<field name="nom">Prueba3</field>
+			<field name="codi">Electro</field>
+			<field name="data"></field>
+			<field name="resultats">Esta bien</field>
+			<!--<field name="pacient_id">12</field>-->
+		</record>
+	</data>
+</odoo>
+
+	

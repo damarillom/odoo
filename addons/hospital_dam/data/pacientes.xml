@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="10" model="hospital_dam.pacient">
+			<field name="nom">Manuel</field>
+			<field name="cognom">Rubio</field>
+			<field name="genere">m</field>
+			<field name="dni">98765432S</field>
+			<field name="adreça">calle falsa 123</field>
+			<field name="nacionalitat">68</field>
+			<field name="ingres">false</field>
+			<field name="ingres_data"></field>
+			<field name="info"></field>
+			<field name="assegurança"></field>
+		</record>
+		<record id="11" model="hospital_dam.pacient">
+			<field name="nom">Elena</field>
+			<field name="cognom">Ruiz</field>
+			<field name="genere">f</field>
+			<field name="dni">98765431A</field>
+			<field name="adreça"></field>
+			<field name="nacionalitat">68</field>
+			<field name="ingres">true</field>
+			<field name="ingres_data">12/1/2019</field>
+			<field name="info">Mareos</field>
+			<field name="assegurança"></field>
+		</record>
+		<record id="12" model="hospital_dam.pacient">
+			<field name="nom">Juan</field>
+			<field name="cognom">Fernandez</field>
+			<field name="genere">m</field>
+			<field name="dni">98765831L</field>
+			<field name="adreça"></field>
+			<field name="nacionalitat">68</field>
+			<field name="ingres">false</field>
+			<field name="ingres_data"></field>
+			<field name="info"></field>
+			<field name="assegurança"></field>
+		</record>
+	</data>
+</odoo>
+

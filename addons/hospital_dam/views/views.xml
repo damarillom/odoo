@@ -1,0 +1,279 @@
+<odoo>
+  <data>
+	  <!--<act_window id="action_todo_task"
+			name="Tasques"
+			res_model="todo.task"
+			view_mode="tree,form" (calendar,graph,pivot,tree,form...)
+			domain="[('camp','criteri',valor)]"
+			/>-->
+		<act_window id="action_hospital_pacient"
+		  name="HospitalDAM"
+		  res_model="hospital_dam.pacient"
+		  view_mode="tree,form"
+		/>
+		
+		<act_window id="action_hospital_metge"
+		  name="HospitalDAM"
+		  res_model="h2.metge"
+		  view_mode="tree,form"
+		/>
+		
+		<act_window id="action_hospital_especialitat"
+		  name="HospitalDAM"
+		  res_model="h2.especialitat"
+		  view_mode="tree,form"
+		/>
+		
+		<act_window id="action_hospital_prova"
+		  name="HospitalDAM"
+		  res_model="h2.prova"
+		  view_mode="tree,form"
+		/>
+		
+		<act_window id="action_hospital_prova_cal"
+		  name="HospitalDAM"
+		  res_model="h2.prova"
+		  view_mode="calendar,form"
+		/>
+		
+		<act_window id="action_hospital_prova_gra"
+		  name="HospitalDAM"
+		  res_model="h2.prova"
+		  view_mode="graph,form"
+		/>
+		
+		<act_window id="action_hospital_metge_urgencies"
+		  name="HospitalDAM"
+		  res_model="h2.metge"
+		  view_mode="tree,form"
+		  domain="[('especialitat_id','=',25)]"
+		/>
+		<!--<act_window id="action_hospital_pacient_search"
+		  name="Search"
+		  res_model="hospital_dam.pacient"
+		  view_mode="tree,form"
+		/>-->
+		<!-- Menu item to open To-do Task list -->
+		<menuitem id="menu_hospital_pacient"
+		  name="HospitalDAM"
+		  action="action_hospital_pacient"
+		/>
+		
+		<menuitem name="Gestió de pacients" id="menu_hospital_pacients" parent="menu_hospital_pacient"
+              sequence="1"/>
+
+
+ 		<menuitem name="Llista de pacients" id="menu_hospital_pacients_list" parent="menu_hospital_pacients"
+              sequence="1" action="action_hospital_pacient"/>
+
+		<menuitem name="Gestió de metges" id="menu_hospital_metges" parent="menu_hospital_pacient"
+              sequence="1" action="action_hospital_metge"/>
+		<menuitem name="Gestió de metges de urgencias" id="menu_hospital_metges_urg" parent="menu_hospital_pacient"
+              sequence="1" action="action_hospital_metge_urgencies"/>
+		<menuitem name="Gestió de especialitats" id="menu_hospital_especialitats" parent="menu_hospital_pacient"
+              sequence="1" action="action_hospital_especialitat"/>
+		<menuitem name="Gestió de provas" id="menu_hospital_provas" parent="menu_hospital_pacient"
+              sequence="1" action="action_hospital_prova"/>
+              
+		<menuitem name="Provas:Calendar" id="menu_hospital_provas_cal" parent="menu_hospital_pacient"
+              sequence="1" action="action_hospital_prova_cal"/>
+              
+		<menuitem name="Provas:Graph" id="menu_hospital_provas_gra" parent="menu_hospital_pacient"
+              sequence="1" action="action_hospital_prova_gra"/>
+              
+		<!--<menuitem name="Search" id="menu_hospital_pacients_search" parent="menu_hospital_pacients"
+              sequence="1" action="action_hospital_pacient_search"/>-->
+              
+        <record model="ir.ui.view" id="view_tree_hospital_dam_pacient">
+			<field name="name">List Pacients</field>
+			<field name="model">hospital_dam.pacient</field>
+			<field name="arch" type="xml">	
+				<tree>
+					<field name="nom"/>
+					<field name="cognom"/>
+					<field name="nom_complet"/>
+					<field name="ingres"/>
+				</tree>
+			</field>
+			
+		</record>
+		
+		<record id="search_tree_hospital_dam_pacient_search" model="ir.ui.view">
+			<field name="name">Search</field>
+			<field name="model">hospital_dam.pacient</field>
+			<!--<field eval="10" name="priority"/>-->
+			<field name="arch" type="xml">
+				<search	>
+					<field name="nom"/>
+					<field name="dni"/>
+					<field name="genere" widget="selection"/>
+					<field name="cognom" string="Name and surname"
+						filter_domain="['|', ('nom', 'ilike', self), ('cognom', 'ilike', self)]"/>
+					<!--<filter string="Not Done" name="filter_not_done" domain="[('is_done','=',False)]"/>
+					<filter string="Done" domain="[('is_done','!=',False)]" />-->
+					<filter string="Home" name="genere" domain="[('genere','=','m')]"/>
+					<filter string="Dona" name="genere" domain="[('genere','=','f')]"/>
+					<!--<group string="Nom Cognom">
+                        <filter name="nom" string="Nom"
+                                context="{'group_by': 'nom'}"/>
+						<filter name="cognom" string="Cognom"
+                                context="{'group_by': 'cognom'}"/>
+                    </group>-->
+
+				</search>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_tree_hospital_dam_metge">
+			<field name="name">List metges</field>
+			<field name="model">h2.metge</field>
+			<field name="arch" type="xml">	
+				<tree>
+					<field name="nom"/>
+					<field name="cognom"/>
+				</tree>
+			</field>
+			
+		</record>
+		
+		<record id="view_form_hospital_dam_metge" model="ir.ui.view"> 
+			<field name="name">Metge</field> 
+			<field name="model">h2.metge</field> 
+			<field name="arch" type="xml"> 
+				<form string="metge"> 
+					<sheet> 
+						<group name="group_top">
+							<group name="group_left">
+								<field name="nom"/> 
+								<field name="cognom"/> 
+								<field name="especialitat_id"/>
+							</group>
+							<group name="group_right">
+								<field name="genere"/> 
+								<field name="dni"/>
+							</group> 
+						</group> 
+						<notebook> 
+							<page string="Contacte">
+								<group name="group_top">
+									<field name="adreça"/> 
+									<field name="anys"/> 
+								</group> 
+							</page>
+							<page string="Pacients">
+								<label for="pacient_rel"/>
+								<field name="pacient_rel"/> 
+								<br/>
+							</page>
+						</notebook>
+						<label for="edifici"/>
+						<field name="edifici"/>
+					</sheet>
+				</form> 
+			</field> 
+		</record> 
+    
+		<record model="ir.ui.view" id="view_tree_hospital_dam_especialitat">
+			<field name="name">List especialitats</field>
+			<field name="model">h2.especialitat</field>
+			<field name="arch" type="xml">	
+				<tree>
+					<field name="nom"/>
+				</tree>
+			</field>
+			
+		</record>
+		
+		<record model="ir.ui.view" id="view_tree_hospital_dam_prova">
+			<field name="name">List provas</field>
+			<field name="model">h2.prova</field>
+			<field name="arch" type="xml">	
+				<tree>
+					<field name="nom"/>
+					<field name="codi"/>
+				</tree>
+			</field>
+			
+		</record>
+    
+		<record id="view_calendar_hospital_dam_prova_cal" model="ir.ui.view">
+			<field name="name">Calendar Provas</field>
+			<field name="model">h2.prova</field>
+			<field name="arch" type="xml">
+				<calendar date_start="data">
+					<field name="nom" />
+					<field name="codi"  />
+				</calendar>
+			</field>
+		</record>
+		
+		<record id="view_graph_hospital_dam_prova_gra" model="ir.ui.view">
+			<field name="name">Graph Provas</field>
+			<field name="model">h2.prova</field>
+			<field name="arch" type="xml">
+				<graph type="pivot">
+					<field name="codi" type="col" />
+					<!--<field name="nom"   />
+					<field name="data" interval="week" />-->
+				</graph>
+			</field>
+		</record>
+    		
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="hospital_dam.list">
+      <field name="name">HospitalDAM list</field>
+      <field name="model">hospital_dam.hospital_dam</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="hospital_dam.action_window">
+      <field name="name">HospitalDAM window</field>
+      <field name="res_model">hospital_dam.hospital_dam</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="hospital_dam.action_server">
+      <field name="name">HospitalDAM server</field>
+      <field name="model_id" ref="model_hospital_dam_hospital_dam"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="HospitalDAM" id="hospital_dam.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="hospital_dam.menu_1" parent="hospital_dam.menu_root"/>
+    <menuitem name="Menu 2" id="hospital_dam.menu_2" parent="hospital_dam.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="hospital_dam.menu_1_list" parent="hospital_dam.menu_1"
+              action="hospital_dam.action_window"/>
+    <menuitem name="Server to list" id="hospital_dam" parent="hospital_dam.menu_2"
+              action="hospital_dam.action_server"/>
+    -->
+  </data>
+</odoo>

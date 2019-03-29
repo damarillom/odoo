@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<odoo noupdate="True">
+  <!-- Data to load -->
+  <record model="todo.task" id="todo_task_d">
+    <field name="name">Comprar molta fruita</field>
+    <field name="user_id" ref="base.user_root" />
+    <field name="date_deadline"
+           eval="(datetime.now() + timedelta(-1)).strftime('%Y-%m-%d')" />
+    <field name="is_done" eval="False" />
+  </record>
+  <!--<record model="todo.task" id="todo_task_e">
+    <field name="name">Comprar molta verdura</field>
+    <field name="user_id" ref="base.user_root" />
+    <field name="date_deadline"
+           eval="(datetime.now() + timedelta(-1)).strftime('%Y-%m-%d')" />
+    <field name="is_done" eval="False" />
+  </record>-->
+</odoo>

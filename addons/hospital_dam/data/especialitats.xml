@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="especialitat0" model="h2.especialitat">
+			<field name="nom">oncologia</field>
+			<field name="edifici">3</field>
+			<field name="metge_ids">metge0</field>
+		</record>
+		<record id="especialitat1" model="h2.especialitat">
+			<field name="nom">pediatria</field>
+			<field name="edifici">3</field>
+			<field name="metge_ids">metge0</field>
+		</record>
+		<record id="especialitat2" model="h2.especialitat">
+			<field name="nom">psiquiatria</field>
+			<field name="edifici">3</field>
+			<field name="metge_ids">metge0</field>
+		</record>
+		<record id="especialitat3" model="h2.especialitat">
+			<field name="nom">cardiologia</field>
+			<field name="edifici">3</field>
+			<field name="metge_ids">metge0</field>
+		</record>
+		<record id="especialitat4" model="h2.especialitat">
+			<field name="nom">urgències</field>
+			<field name="edifici">3</field>
+			<field name="metge_ids">metge0</field>
+		</record>
+	</data>
+</odoo>
+
+

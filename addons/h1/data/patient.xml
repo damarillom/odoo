@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--<record model="h1.pacient" id="pacient0">
+            <field name="nom">Lewis</field>
+            <field name="cognom">Jones</field>
+			<field name="genere">H</field>
+			<field name="ingres">False</field>
+			<field name="dni">45637827E</field>
+			<field name="adreca">c/ del Riu 3</field>
+			<field name="informacio">Cap rellevant</field>
+			<field name="data_naixement">18/08/1978</field>
+			<field name="nacionalitat">68</field>
+			<field name="asseguranca">Sanitas</field> 
+        </record>
+        
+         <record model="h1.pacient" id="pacient1">
+            <field name="nom">Natalie</field>
+            <field name="cognom">Carmichael</field>
+			<field name="genere">D</field>
+			<field name="ingres">False</field>
+			<field name="dni">45637824L</field>
+			<field name="adreca">c/ del Riu 3</field>
+			<field name="informacio">Cap rellevant</field>
+			<field name="data_naixement">18/08/1968</field>
+			<field name="nacionalitat" ref="base.es" />
+			<field name="asseguranca">Asepeyo</field> 
+        </record>
+
+         <record model="h1.pacient" id="pacient2">
+            <field name="nom">Ricard</field>
+            <field name="cognom">Cardona</field>
+			<field name="genere">A</field>
+			<field name="ingres">True</field>
+			<field name="dni">46135824L</field>
+			<field name="adreca">c/ de l'or 3</field>
+			<field name="informacio">Molta informació</field>
+			<field name="data_naixement">18/08/1977</field>
+			<field name="nacionalitat">68</field>
+			<field name="asseguranca">Asepeyo</field> 
+        </record>-->
+    </data>
+</odoo>

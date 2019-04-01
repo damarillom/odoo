@@ -88,7 +88,7 @@
 			<field name="name">List Pacients</field>
 			<field name="model">hospital_dam.pacient</field>
 			<field name="arch" type="xml">	
-				<tree>
+				<tree decoration-info="ingres==True">
 					<field name="nom"/>
 					<field name="cognom"/>
 					<field name="nom_complet"/>

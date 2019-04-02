@@ -5,7 +5,7 @@
 			<field name="nom">Manuel</field>
 			<field name="cognom">Rubio</field>
 			<field name="genere">m</field>
-			<field name="dni">98765432S</field>
+			<field name="dni">99999999R</field>
 			<field name="adreça">calle falsa 123</field>
 			<field name="nacionalitat">68</field>
 			<field name="ingres">false</field>
@@ -17,7 +17,7 @@
 			<field name="nom">Elena</field>
 			<field name="cognom">Ruiz</field>
 			<field name="genere">f</field>
-			<field name="dni">98765431A</field>
+			<field name="dni">12345678Z</field>
 			<field name="adreça"></field>
 			<field name="nacionalitat">68</field>
 			<field name="ingres">true</field>
@@ -29,7 +29,7 @@
 			<field name="nom">Juan</field>
 			<field name="cognom">Fernandez</field>
 			<field name="genere">m</field>
-			<field name="dni">98765831L</field>
+			<field name="dni">26509397B</field>
 			<field name="adreça"></field>
 			<field name="nacionalitat">68</field>
 			<field name="ingres">false</field>
